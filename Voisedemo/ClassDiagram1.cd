@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SmartHome.MainPage" BaseTypeListCollapsed="true">
+    <Position X="5" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAABAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="SmartHome.sensorListener">
+    <Position X="1.5" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAAAAAAAAAAIAAAAAAABAAAAAAAACAAAAAg=</HashCode>
+      <FileName>sensorListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHome.speechRecognizer">
+    <Position X="1.75" Y="7" Width="9" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAoAAAAAAAAAAAAAAABEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>speechRecognizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHome.mqttCloud">
+    <Position X="8" Y="0.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AABAwQAEAEEABAJAAAgQAAoAEAQRAACAAGBABAAAQQA=</HashCode>
+      <FileName>mqttCloud.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHome.buttonListener">
+    <Position X="1.5" Y="0.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAAEAgAAAAAAAAAAAAAAABAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>buttonListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

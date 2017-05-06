@@ -1,0 +1,64 @@
+﻿<grammar
+  version="1.0"
+  xml:lang="en-US"
+  xmlns="http://www.w3.org/2001/06/grammar"
+  root="rootRule">
+  <rule id="rootRule">
+    <one-of>
+      <item>
+        <ruleref uri="#rule1"/>
+      </item>
+      <item>
+        <ruleref uri="#rule3"/>
+      </item>
+      <item>
+        <ruleref uri="#rule6"/>
+      </item>
+      <item>
+        <ruleref uri="#rule7"/>
+      </item>
+       <item>
+        <ruleref uri="#rule8"/>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="rule1">
+    <item>light</item>
+    <ruleref uri="#rule2"/>
+  </rule>
+  <rule id="rule2">
+    <one-of>
+      <item>on</item>
+      <item>off</item>
+    </one-of>
+  </rule>
+  <rule id="rule3">
+    <item>air</item>
+    <ruleref uri="#rule4"/>
+  </rule>
+  <rule id="rule4">
+    <one-of>
+      <item>on</item>
+      <item>off</item>
+    </one-of>
+  </rule>
+  <rule id="rule5">
+    <one-of>
+      <item>engage</item>
+      <item>disengage</item>
+    </one-of>
+  </rule>
+  <rule id="rule6">
+    <ruleref uri="#rule5"/>
+    <item>obstacle</item>
+    <item>detection</item>
+  </rule>
+  <rule id="rule7">
+    <item>stop</item>
+  </rule>
+  <rule id="rule8">
+    <item>turn</item>
+  </rule>
+
+</grammar>
+
