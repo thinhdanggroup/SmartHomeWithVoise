@@ -8,4 +8,4 @@ Block diagram:
 
 It require Visual Studio 2017, Raspberry pi 3, arduino uno R3.
 
-All description and detail design is include on "report" document.
+All description and detail design is include on "report" document. I am so sorry about document, which is written by Vietnamese. Because i don't have time to translate it to Endlish. If anyone want to know about this project. Please contact to me with this email: thinhdang206@gmail.com.
