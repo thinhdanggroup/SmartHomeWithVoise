@@ -55,7 +55,7 @@ namespace SmartHome
             client.MqttMsgPublished += client_MqttMsgPublished;
             client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
 
-            //initGPIO();
+            initGPIO();
 
             mqttTimer.Interval = TimeSpan.FromSeconds(1);
             mqttTimer.Tick += mqttTimerTick;
@@ -68,7 +68,7 @@ namespace SmartHome
             ushort msgId = client.Subscribe(new string[] { "control" },
             new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
         }
-        /*private void initGPIO()
+        private void initGPIO()
         {
             var gpio = GpioController.GetDefault();
 
@@ -93,7 +93,6 @@ namespace SmartHome
             Debug.WriteLine("GPIO pin initialized correctly.");
 
         }
-        */
         public void controlDevice(int device, bool status)
         {
             if (status == true) pinValue = GpioPinValue.High;
@@ -226,8 +225,19 @@ namespace SmartHome
             tempStatus = tempCurrent;
             humidityStatus = humidityCurrent;
         }
-        private void autoControl()
+        /*private void autoControl()
         {
+            if (pinLed.Read().ToString() == "High")
+            {
+                led = "LED ON";
+            }
+            else led = "LED OFF";
+            if (pinAir.Read().ToString() == "High")
+            {
+                air = "AIR ON";
+            }
+
+            //////
             float luxCurrent = float.Parse(luxStatus);
             float tempCurent = float.Parse(tempStatus);
             if (luxCurrent >= 300.0)
@@ -245,6 +255,28 @@ namespace SmartHome
             else
             {
                 controlDevice(1, false);
+            }
+        }*/
+        private void autoControl()
+        {
+            int luxCurrent = int.Parse(luxStatus);
+            int tempCurrent = int.Parse(tempStatus);
+            if (pinLed.Read().ToString() == "High" && luxCurrent <= 150)
+            {
+                controlDevice(0, true);
+            }
+            else if (pinLed.Read().ToString() == "Low" && luxCurrent >= 250)
+            {
+                controlDevice(0, false);
+            }
+
+            if (pinAir.Read().ToString() == "High" && tempCurrent <= 24)
+            {
+                controlDevice(1, false);
+            }
+            else if (pinAir.Read().ToString() == "Low" && tempCurrent >= 28)
+            {
+                controlDevice(1, true);
             }
         }
 

@@ -26,27 +26,26 @@ namespace SmartHome
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private static mqttCloud mqtt = new mqttCloud();
-        private buttonListener button = new buttonListener(mqtt);
-        private sensorListener sensor = new sensorListener(mqtt);
-        private speechRecognizer recognizer = new speechRecognizer(mqtt);
+        private static mqttCloud mqtt;
+        private buttonListener button;
+        private sensorListener sensor;
+        private speechRecognizer recognizer;
         public MainPage()
         {
             this.InitializeComponent();
             //init
-            try
+            /*try
             {
                 mqtt = new mqttCloud();
             }
             catch (IOException)
             {
                 mqtt = new mqttCloud();
-            }
+            }*/
+            mqtt = new mqttCloud();
+            recognizer = new speechRecognizer(mqtt);
             button = new buttonListener(mqtt);
             sensor = new sensorListener(mqtt);
-            recognizer.initializeSpeechRecognizer();
-            sensor.initI2C();
-            button.initGPIO();
         }
        /*
         private async void initializeSpeechRecognizer()

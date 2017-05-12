@@ -17,6 +17,7 @@ namespace SmartHome
         public buttonListener(mqttCloud mqttCurrent)
         {
             mqttMain = mqttCurrent;
+            initGPIO();
         }
         public void initGPIO()
         {

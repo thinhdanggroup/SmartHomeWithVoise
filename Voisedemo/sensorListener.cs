@@ -35,6 +35,7 @@ namespace SmartHome
         public sensorListener(mqttCloud mqttCurrent)
         {
             mqtt = mqttCurrent;
+            initI2C();
         }
         public async void initI2C()
 
@@ -57,7 +58,7 @@ namespace SmartHome
         private void TimerCallback(object state)
 
         {
-
+           
             byte[] RegAddrBuf = new byte[] { 0x40 };
 
             byte[] ReadBuf = new byte[18];

@@ -18,6 +18,7 @@ namespace SmartHome
         public speechRecognizer(mqttCloud mqttCurrent)
         {
             mqtt = mqttCurrent;
+            initializeSpeechRecognizer();
         }
         public async void initializeSpeechRecognizer()
         {
